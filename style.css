@@ -1,0 +1,407 @@
+:root {
+    --primary-color: #0a192f;
+    /* Deep Navy Blue */
+    --secondary-color: #b22234;
+    /* US Flag Red */
+    --accent-color: #d4af37;
+    /* Gold */
+    --text-light: #f8f9fa;
+    --text-dark: #212529;
+    --bg-light: #f4f6f9;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.director-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* News Ticker */
+.news-ticker-container {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.news-ticker-content {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.news-item {
+    margin-right: 50px;
+    font-weight: 500;
+}
+
+/* Section Headings */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Wanted Person */
+.wanted-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.wanted-card:hover {
+    transform: translateY(-5px);
+}
+
+.wanted-header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Success Stories / Justice Delivered */
+.success-card {
+    border: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.success-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Investigation Storyline */
+.investigation-section {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    padding: 20px;
+    background: var(--bg-light);
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Gallery */
+.gallery-img {
+    width: 100%;
+
+    :root {
+        --primary-color: #0a192f;
+        /* Deep Navy Blue */
+        --secondary-color: #b22234;
+        /* US Flag Red */
+        --accent-color: #d4af37;
+        /* Gold */
+        --text-light: #f8f9fa;
+        --text-dark: #212529;
+        --bg-light: #f4f6f9;
+    }
+
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand,
+    .nav-link {
+        color: var(--text-light) !important;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .nav-link:hover {
+        color: var(--accent-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        color: var(--text-light);
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .director-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid var(--accent-color);
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        color: #ccc;
+        margin-bottom: 30px;
+    }
+
+    /* News Ticker */
+    .news-ticker-container {
+        background-color: var(--secondary-color);
+        color: var(--text-light);
+        padding: 10px 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .news-ticker-content {
+        display: inline-block;
+        animation: ticker 30s linear infinite;
+    }
+
+    @keyframes ticker {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .news-item {
+        margin-right: 50px;
+        font-weight: 500;
+    }
+
+    /* Section Headings */
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+    }
+
+    /* Wanted Person */
+    .wanted-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .wanted-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .wanted-header {
+        background-color: var(--secondary-color);
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Success Stories / Justice Delivered */
+    .success-card {
+        border: none;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .success-icon {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+
+    /* Investigation Storyline */
+    .investigation-section {
+        background-color: #fff;
+        padding: 80px 0;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .timeline-item {
+        padding: 20px;
+        background: var(--bg-light);
+        margin-bottom: 20px;
+        border-left: 4px solid var(--primary-color);
+        position: relative;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .footer-links a {
+        color: #ccc;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent-color);
+    }
+
+    /* Gallery */
+    .gallery-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .gallery-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Passport Image */
+    .passport-img {
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+        padding: 3px;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
