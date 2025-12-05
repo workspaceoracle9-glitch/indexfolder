@@ -24,7 +24,6 @@ body {
     color: var(--text-light);
     padding: 15px 0;
     border-bottom: 5px solid var(--secondary-red);
-    z-index: 1030;
 }
 
 .header-logo {
@@ -56,28 +55,49 @@ body {
     padding: 10px 15px !important;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: #d4af37 !important;
 }
 
-/* Hero Section */
-.director-hero {
-    position: relative;
+/* Service Blocks (Hero Replacement) */
+.service-blocks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0;
 }
 
-.director-profile-img {
-    transition: transform 0.3s;
+.service-block {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 40px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    display: block;
 }
 
-.director-profile-img:hover {
-    transform: scale(1.05);
+.service-block:hover {
+    background-color: #001f42;
+    color: var(--text-light);
 }
 
-/* Section Styling */
-section {
-    position: relative;
+.service-block i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #d4af37;
+}
+
+.service-block h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Main Content Layout */
+.main-content {
+    padding: 50px 0;
 }
 
 .section-heading {
@@ -87,7 +107,40 @@ section {
     font-family: 'Merriweather', serif;
     color: var(--primary-blue);
     font-weight: 700;
-    display: inline-block;
+}
+
+/* News Items */
+.news-item {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.news-date {
+    color: var(--secondary-red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 5px 0;
+}
+
+/* Director Spotlight */
+.director-spotlight {
+    background-color: var(--bg-gray);
+    padding: 30px;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.director-spotlight img {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
 }
 
 /* Beneficiaries Grid */
@@ -103,7 +156,6 @@ section {
 
 .beneficiary-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .passport-img {
@@ -149,9 +201,4 @@ footer {
 
 .letter-spacing-2 {
     letter-spacing: 2px;
-}
-
-/* Smooth Scroll Padding for Fixed Header */
-html {
-    scroll-behavior: smooth;
 }
