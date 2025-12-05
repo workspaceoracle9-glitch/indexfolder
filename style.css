@@ -151,6 +151,11 @@ body {
     text-align: center;
     height: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.beneficiary-card:hover {
+    transform: translateY(-5px);
 }
 
 .passport-img {
@@ -187,4 +192,13 @@ footer {
 
 .footer-links a:hover {
     color: #fff;
+}
+
+/* Utilities */
+.font-serif {
+    font-family: 'Merriweather', serif;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
 }
