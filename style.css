@@ -1,105 +1,118 @@
 :root {
-    --primary-color: #0a192f;
-    /* Deep Navy Blue */
-    --secondary-color: #b22234;
-    /* US Flag Red */
-    --accent-color: #d4af37;
-    /* Gold */
-    --text-light: #f8f9fa;
-    --text-dark: #212529;
-    --bg-light: #f4f6f9;
+    --primary-color: #002d56; /* Texas AG Navy */
+    --secondary-color: #ce1126; /* Texas Red */
+    --accent-color: #bf5700; /* Texas Orange/Goldish accent */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    --font-main: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-main);
     background-color: var(--bg-light);
     color: var(--text-dark);
+    line-height: 1.6;
 }
 
 /* Navbar */
 .navbar {
     background-color: var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1rem 0;
 }
 
-.navbar-brand,
-.nav-link {
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--text-light) !important;
-    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
 .nav-link:hover {
-    color: var(--accent-color) !important;
+    color: var(--secondary-color) !important;
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('hero-bg.jpg');
+    background: linear-gradient(rgba(0, 45, 86, 0.9), rgba(0, 45, 86, 0.8)), url('hero-bg.jpg'); /* Fallback or placeholder */
     background-size: cover;
     background-position: center;
     color: var(--text-light);
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
+    position: relative;
 }
 
 .director-img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid var(--accent-color);
-    margin-bottom: 20px;
+    border: 5px solid var(--text-light);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: #ccc;
+    font-size: 1.5rem;
+    font-weight: 300;
     margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-/* News Ticker */
-.news-ticker-container {
+/* FBI Recovery News (formerly News Ticker) */
+.news-section {
     background-color: var(--secondary-color);
     color: var(--text-light);
-    padding: 10px 0;
-    overflow: hidden;
-    white-space: nowrap;
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .news-ticker-content {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.news-ticker-content span {
     display: inline-block;
-    animation: ticker 30s linear infinite;
+    padding-left: 100%;
+    animation: ticker 25s linear infinite;
 }
 
 @keyframes ticker {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
 }
 
-.news-item {
-    margin-right: 50px;
-    font-weight: 500;
-}
-
-/* Section Headings */
+/* Section Styling */
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .section-title::after {
@@ -108,300 +121,68 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 100px;
+    height: 4px;
     background-color: var(--secondary-color);
 }
 
-/* Wanted Person */
-.wanted-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Cards */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s;
+    overflow: hidden;
 }
 
-.wanted-card:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-.wanted-header {
-    background-color: var(--secondary-color);
-    color: #fff;
+.card-header-custom {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px;
+    font-weight: 700;
     text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
-/* Success Stories / Justice Delivered */
-.success-card {
-    border: none;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-}
-
-.success-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
+/* Beneficiary Images */
+.passport-img {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     margin-bottom: 15px;
-}
-
-/* Investigation Storyline */
-.investigation-section {
-    background-color: #fff;
-    padding: 80px 0;
-}
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.timeline-item {
-    padding: 20px;
-    background: var(--bg-light);
-    margin-bottom: 20px;
-    border-left: 4px solid var(--primary-color);
-    position: relative;
 }
 
 /* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--text-light);
-    padding: 40px 0;
+    padding: 60px 0 30px;
     text-align: center;
+    border-top: 5px solid var(--secondary-color);
+}
+
+.footer-contact {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.footer-contact i {
+    color: var(--secondary-color);
+    margin-right: 10px;
 }
 
 .footer-links a {
-    color: #ccc;
-    margin: 0 10px;
+    color: rgba(255,255,255,0.7);
+    margin: 0 15px;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--text-light);
 }
-
-/* Gallery */
-.gallery-img {
-    width: 100%;
-
-    :root {
-        --primary-color: #0a192f;
-        /* Deep Navy Blue */
-        --secondary-color: #b22234;
-        /* US Flag Red */
-        --accent-color: #d4af37;
-        /* Gold */
-        --text-light: #f8f9fa;
-        --text-dark: #212529;
-        --bg-light: #f4f6f9;
-    }
-
-    body {
-        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        background-color: var(--bg-light);
-        color: var(--text-dark);
-    }
-
-    /* Navbar */
-    .navbar {
-        background-color: var(--primary-color);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-brand,
-    .nav-link {
-        color: var(--text-light) !important;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .nav-link:hover {
-        color: var(--accent-color) !important;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('hero-bg.jpg');
-        background-size: cover;
-        background-position: center;
-        color: var(--text-light);
-        padding: 100px 0;
-        text-align: center;
-    }
-
-    .director-img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 4px solid var(--accent-color);
-        margin-bottom: 20px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-        color: #ccc;
-        margin-bottom: 30px;
-    }
-
-    /* News Ticker */
-    .news-ticker-container {
-        background-color: var(--secondary-color);
-        color: var(--text-light);
-        padding: 10px 0;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-
-    .news-ticker-content {
-        display: inline-block;
-        animation: ticker 30s linear infinite;
-    }
-
-    @keyframes ticker {
-        0% {
-            transform: translateX(100%);
-        }
-
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-
-    .news-item {
-        margin-right: 50px;
-        font-weight: 500;
-    }
-
-    /* Section Headings */
-    .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background-color: var(--secondary-color);
-    }
-
-    /* Wanted Person */
-    .wanted-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-    }
-
-    .wanted-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .wanted-header {
-        background-color: var(--secondary-color);
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    /* Success Stories / Justice Delivered */
-    .success-card {
-        border: none;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .success-icon {
-        font-size: 2rem;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-    }
-
-    /* Investigation Storyline */
-    .investigation-section {
-        background-color: #fff;
-        padding: 80px 0;
-    }
-
-    .timeline {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .timeline-item {
-        padding: 20px;
-        background: var(--bg-light);
-        margin-bottom: 20px;
-        border-left: 4px solid var(--primary-color);
-        position: relative;
-    }
-
-    /* Footer */
-    footer {
-        background-color: var(--primary-color);
-        color: var(--text-light);
-        padding: 40px 0;
-        text-align: center;
-    }
-
-    .footer-links a {
-        color: #ccc;
-        margin: 0 10px;
-        text-decoration: none;
-    }
-
-    .footer-links a:hover {
-        color: var(--accent-color);
-    }
-
-    /* Gallery */
-    .gallery-img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-    }
-
-    .gallery-img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    /* Passport Image */
-    .passport-img {
-        width: 100px;
-        height: 120px;
-        object-fit: cover;
-        border: 1px solid #ddd;
-        padding: 3px;
-        background: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
