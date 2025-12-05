@@ -1,188 +1,190 @@
 :root {
-    --primary-color: #002d56; /* Texas AG Navy */
-    --secondary-color: #ce1126; /* Texas Red */
-    --accent-color: #bf5700; /* Texas Orange/Goldish accent */
-    --text-light: #ffffff;
+    --primary-blue: #002855;
+    /* Deep Navy */
+    --secondary-red: #B22234;
+    /* Texas Red */
     --text-dark: #333333;
-    --bg-light: #f8f9fa;
-    --bg-dark: #1a1a1a;
-    --font-main: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --text-light: #ffffff;
+    --bg-gray: #f4f4f4;
+    --border-color: #e0e0e0;
 }
 
 body {
-    font-family: var(--font-main);
-    background-color: var(--bg-light);
+    font-family: 'Open Sans', 'Segoe UI', sans-serif;
     color: var(--text-dark);
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
-    background-color: var(--primary-color);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 1rem 0;
+/* Header */
+.top-header {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 15px 0;
+    border-bottom: 5px solid var(--secondary-red);
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-light) !important;
+.header-logo {
+    font-family: 'Merriweather', serif;
     text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.header-logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
     letter-spacing: 1px;
 }
 
+.header-logo span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: block;
+    color: #d4af37;
+    /* Gold accent */
+}
+
 .nav-link {
-    color: rgba(255,255,255,0.9) !important;
-    font-weight: 500;
+    color: var(--text-light) !important;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9rem;
-    margin-left: 15px;
-    transition: color 0.3s;
+    padding: 10px 15px !important;
 }
 
 .nav-link:hover {
-    color: var(--secondary-color) !important;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(rgba(0, 45, 86, 0.9), rgba(0, 45, 86, 0.8)), url('hero-bg.jpg'); /* Fallback or placeholder */
-    background-size: cover;
-    background-position: center;
+/* Service Blocks (Hero Replacement) */
+.service-blocks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0;
+}
+
+.service-block {
+    background-color: var(--primary-blue);
     color: var(--text-light);
-    padding: 120px 0;
+    padding: 40px 20px;
     text-align: center;
-    position: relative;
+    transition: background-color 0.3s;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    display: block;
 }
 
-.director-img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--text-light);
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    margin-bottom: 25px;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-/* FBI Recovery News (formerly News Ticker) */
-.news-section {
-    background-color: var(--secondary-color);
+.service-block:hover {
+    background-color: #001f42;
     color: var(--text-light);
-    padding: 15px 0;
-    font-weight: 600;
-    font-size: 1.1rem;
 }
 
-.news-ticker-content {
-    white-space: nowrap;
-    overflow: hidden;
+.service-block i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #d4af37;
 }
 
-.news-ticker-content span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: ticker 25s linear infinite;
-}
-
-@keyframes ticker {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-}
-
-/* Section Styling */
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-    color: var(--primary-color);
+.service-block h3 {
+    font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
-    position: relative;
-    padding-bottom: 20px;
+    margin: 0;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background-color: var(--secondary-color);
+/* Main Content Layout */
+.main-content {
+    padding: 50px 0;
 }
 
-/* Cards */
-.card {
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-header-custom {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 15px;
+.section-heading {
+    border-bottom: 3px solid var(--secondary-red);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-family: 'Merriweather', serif;
+    color: var(--primary-blue);
     font-weight: 700;
-    text-align: center;
 }
 
-/* Beneficiary Images */
+/* News Items */
+.news-item {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.news-date {
+    color: var(--secondary-red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 5px 0;
+}
+
+/* Director Spotlight */
+.director-spotlight {
+    background-color: var(--bg-gray);
+    padding: 30px;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.director-spotlight img {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Beneficiaries Grid */
+.beneficiary-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
 .passport-img {
-    width: 120px;
-    height: 150px;
+    width: 100px;
+    height: 120px;
     object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 3px;
+    background: #fff;
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 60px 0 30px;
-    text-align: center;
-    border-top: 5px solid var(--secondary-color);
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 60px 0;
+    font-size: 0.9rem;
 }
 
-.footer-contact {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.footer-contact i {
-    color: var(--secondary-color);
-    margin-right: 10px;
+.footer-heading {
+    color: #d4af37;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .footer-links a {
-    color: rgba(255,255,255,0.7);
-    margin: 0 15px;
+    color: #ccc;
     text-decoration: none;
-    transition: color 0.3s;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .footer-links a:hover {
-    color: var(--text-light);
+    color: #fff;
 }
