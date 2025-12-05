@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
 
     <!-- Header -->
-    <header class="top-header">
+    <header class="top-header sticky-top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
@@ -25,7 +25,7 @@
                         <h1>SEAN M. CURREN</h1>
                     </div>
                 </div>
-                <div class="col-md-4 text-end">
+                <div class="col-md-4 text-end d-none d-md-block">
                     <div class="mb-2">
                         <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
@@ -42,92 +42,404 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0 sticky-top" style="top: 86px; z-index: 1020;">
         <div class="container">
             <button class="navbar-toggler py-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="about-director.html">About the Director</a></li>
-                    <li class="nav-item"><a class="nav-link" href="fbi-recovery.html">FBI Recovery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="justice-delivered.html">Justice Delivered</a></li>
-                    <li class="nav-item"><a class="nav-link" href="asset-recovery.html">Asset Recovery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="most-wanted.html">Most Wanted</a></li>
-                    <li class="nav-item"><a class="nav-link" href="beneficiaries.html">Beneficiaries</a></li>
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item"><a class="nav-link" href="#about">About the Director</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fbi-recovery">FBI Recovery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#justice">Justice Delivered</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#asset-recovery">Asset Recovery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#most-wanted">Most Wanted</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beneficiaries">Beneficiaries</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Service Blocks (Hero Replacement) -->
-    <section class="service-blocks-container">
-        <a href="justice-delivered.html" class="service-block">
-            <i class="fas fa-gavel"></i>
-            <h3>Justice Delivered</h3>
-        </a>
-        <a href="asset-recovery.html" class="service-block">
-            <i class="fas fa-hand-holding-usd"></i>
-            <h3>Asset Recovery</h3>
-        </a>
-        <a href="most-wanted.html" class="service-block">
-            <i class="fas fa-user-shield"></i>
-            <h3>Most Wanted</h3>
-        </a>
-        <a href="beneficiaries.html" class="service-block">
-            <i class="fas fa-users"></i>
-            <h3>Beneficiaries</h3>
-        </a>
+    <!-- Hero / Director Spotlight -->
+    <section id="hero" class="director-hero text-center text-white d-flex align-items-center justify-content-center"
+        style="background: linear-gradient(rgba(0, 40, 85, 0.9), rgba(0, 40, 85, 0.8)), url('hero-bg.jpg'); background-size: cover; padding: 100px 0;">
+        <div class="container">
+            <img src="Sean M. Curren.jpeg" alt="Director Sean M. Curren" class="director-profile-img mb-4"
+                style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; border: 6px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <h1 class="display-4 fw-bold font-serif">Sean M. Curren</h1>
+            <p class="lead text-uppercase letter-spacing-2 mb-4">28th Director of the United States Secret Service</p>
+            <a href="#about" class="btn btn-danger btn-lg px-5 rounded-pill">Meet the Director</a>
+        </div>
     </section>
 
-    <!-- Main Content Area -->
-    <div class="container main-content">
-        <div class="row">
-            <!-- Left Column: News -->
-            <div class="col-lg-8">
-                <h2 class="section-heading">FBI Recovery News</h2>
-
-                <div class="news-item">
-                    <div class="news-date">December 05, 2025</div>
-                    <h3 class="news-title">Director Curren Announces $50 Million Asset Recovery Milestone</h3>
-                    <p>The Finance Unit successfully returned funds to over 500 victims of international wire fraud this
-                        month alone.</p>
-                </div>
-
-                <div class="news-item">
-                    <div class="news-date">December 02, 2025</div>
-                    <h3 class="news-title">New International Partnership to Combat Cyber Crime</h3>
-                    <p>Director Curren signed a historic memorandum of understanding with Europol to strengthen
-                        cross-border investigations.</p>
-                </div>
-
-                <div class="news-item">
-                    <div class="news-date">November 28, 2025</div>
-                    <h3 class="news-title">Major Takedown of Transnational Organized Crime Ring</h3>
-                    <p>Joint operation leads to the arrest of key figures in a global money laundering syndicate.</p>
-                </div>
+    <!-- FBI Recovery News Ticker -->
+    <div class="bg-dark text-white py-2 overflow-hidden">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <span class="badge bg-danger me-3">LATEST NEWS</span>
+                <marquee behavior="scroll" direction="left" class="fw-bold">
+                    Director Curren Announces $50 Million Asset Recovery Milestone | New International Partnership to
+                    Combat Cyber Crime | Major Takedown of Transnational Organized Crime Ring
+                </marquee>
             </div>
+        </div>
+    </div>
 
-            <!-- Right Column: Director Spotlight -->
-            <div class="col-lg-4">
-                <div class="director-spotlight">
-                    <h3 class="section-heading h5">Director's Spotlight</h3>
-                    <img src="Sean M. Curren.jpeg" alt="Director Sean M. Curren">
-                    <h4 class="h5 fw-bold">Sean M. Curren</h4>
-                    <p class="small text-uppercase text-muted">28th Director of the US Secret Service</p>
-                    <p>Dedicated to protecting the nation's financial infrastructure and ensuring justice for victims of
-                        fraud.</p>
-                    <a href="about-director.html" class="btn btn-outline-primary btn-sm mt-2">Read Full Bio</a>
-                    <hr>
-                    <div class="contact-box mt-4">
-                        <h5 class="fw-bold">Contact the Office</h5>
-                        <p class="mb-1"><i class="fas fa-envelope me-2 text-primary"></i> fbifinaceunit@usa.com</p>
-                        <p><i class="fas fa-phone me-2 text-primary"></i> +1 (551) 215-2330</p>
+    <!-- About The Director Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">About The Director</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <p class="lead text-center mb-5">"Our mission is clear: to safeguard the nation's financial
+                        infrastructure and ensure justice for victims of fraud."</p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Welcome to the official portfolio of the Office of the Director. It is my distinct honor
+                                to serve as the 28th Director of the United States Secret Service.</p>
+                            <p>In an increasingly digital world, the threats we face are evolving. From complex wire
+                                fraud schemes to transnational organized crime, my office is dedicated to staying one
+                                step ahead. We are committed to not only apprehending those who seek to do harm but also
+                                to recovering assets and returning them to their rightful owners.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="career-highlight-card p-3 bg-light border-start border-5 border-danger mb-3">
+                                <h4 class="h6 fw-bold">Leadership in Financial Crimes</h4>
+                                <p class="small mb-0">Spearheaded the formation of the Global Cyber Fraud Task Force,
+                                    resulting in the recovery of over $500 million in stolen assets.</p>
+                            </div>
+                            <div class="career-highlight-card p-3 bg-light border-start border-5 border-danger mb-3">
+                                <h4 class="h6 fw-bold">Western Union Settlement</h4>
+                                <p class="small mb-0">Played a pivotal role in the historic $586 million settlement,
+                                    ensuring compensation for thousands of victims worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <img src="lg.jpeg" alt="Signature" style="height: 50px; opacity: 0.7;">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <hr class="featurette-divider">
+
+    <!-- FBI Recovery Section -->
+    <section id="fbi-recovery" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-heading mb-4">FBI Recovery Operations</h2>
+                    <p class="lead">The Federal Bureau of Investigation (FBI), in conjunction with the US Secret
+                        Service, holds the primary authority to investigate federal financial crimes.</p>
+                    <p>Our Asset Recovery Unit is tasked with the identification and seizure of assets derived from
+                        criminal activity. We operate under federal forfeiture laws which allow the government to take
+                        ownership of property used to commit crimes.</p>
+
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary rounded-circle p-2 me-3">1</span>
+                            <strong>Investigation & Evidence Gathering</strong>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary rounded-circle p-2 me-3">2</span>
+                            <strong>Asset Seizure & Freezing</strong>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary rounded-circle p-2 me-3">3</span>
+                            <strong>Legal Forfeiture Proceedings</strong>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="badge bg-success rounded-circle p-2 me-3">4</span>
+                            <strong>Restitution to Victims</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg bg-primary text-white p-5 text-center">
+                        <i class="fas fa-shield-alt fa-5x mb-4 text-warning"></i>
+                        <h3>Global Partnerships</h3>
+                        <p>Working with Europol, Interpol, and local law enforcement to track funds across borders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Justice Delivered Section -->
+    <section id="justice" class="py-5">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">Justice Delivered</h2>
+
+            <div class="row text-center mb-5">
+                <div class="col-md-4">
+                    <h2 class="display-4 fw-bold text-primary">500+</h2>
+                    <p class="text-uppercase fw-bold text-muted">Cases Closed</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-4 fw-bold text-primary">$1.2B</h2>
+                    <p class="text-uppercase fw-bold text-muted">Assets Recovered</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-4 fw-bold text-primary">98%</h2>
+                    <p class="text-uppercase fw-bold text-muted">Conviction Rate</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary"><i class="fas fa-gavel me-2"></i>Operation Cyber Shield
+                            </h3>
+                            <p>A multi-year investigation into a sophisticated phishing ring resulted in the arrest of
+                                15 individuals and the seizure of $20 million in cryptocurrency.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary"><i class="fas fa-gavel me-2"></i>The Western Union
+                                Settlement</h3>
+                            <p>Director Curren's team played a key role in securing the historic $586 million
+                                forfeiture, ensuring that victims of wire fraud received compensation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asset Recovery Section -->
+    <section id="asset-recovery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">Asset Recovery & Compensation</h2>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="h5 mb-0"><i class="fas fa-search-dollar me-2"></i>The Process</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>The Office of the Director employs advanced forensic accounting to trace assets illicitly
+                                acquired by criminal enterprises.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i
+                                        class="fas fa-check text-success me-2"></i><strong>Tracing:</strong> Following
+                                    the money trail.</li>
+                                <li class="list-group-item"><i
+                                        class="fas fa-check text-success me-2"></i><strong>Seizure:</strong> Freezing
+                                    bank accounts.</li>
+                                <li class="list-group-item"><i
+                                        class="fas fa-check text-success me-2"></i><strong>Forfeiture:</strong>
+                                    Transferring ownership to the government.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-success text-white">
+                            <h3 class="h5 mb-0"><i class="fas fa-hand-holding-heart me-2"></i>Victim Compensation</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Our ultimate goal is to return assets to victims. Once forfeited, the Remission process
+                                begins to identify eligible victims and calculate loss.</p>
+                            <div class="alert alert-info mt-3 mb-0">
+                                <h4 class="alert-heading h6"><i class="fas fa-info-circle me-2"></i>How to File a Claim
+                                </h4>
+                                <p class="small mb-0">Contact the Victim Assistance Unit:<br><strong>Email:</strong>
+                                    fbifinaceunit@usa.com<br><strong>Phone:</strong> +1 (551) 215-2330</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Wanted Section -->
+    <section id="most-wanted" class="py-5 bg-danger text-white">
+        <div class="container">
+            <h2 class="section-heading text-white text-center mb-5" style="border-color: white;">Most Wanted Fugitives
+            </h2>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card border-danger shadow-lg text-dark">
+                        <div class="card-header bg-white text-danger text-center py-3">
+                            <h2 class="h4 mb-0 fw-bold">WANTED BY THE SECRET SERVICE</h2>
+                        </div>
+                        <div class="card-body p-5 text-center">
+                            <img src="wanted-placeholder.jpg" alt="Adrian Diaz" class="img-fluid rounded shadow mb-4"
+                                style="max-width: 300px; border: 5px solid #dc3545;">
+
+                            <h3 class="text-danger fw-bold display-6 text-uppercase">ADRIAN DIAZ (ALIAS)</h3>
+
+                            <div class="badge bg-danger fs-6 mb-3 px-3 py-2">FUGITIVE</div>
+
+                            <h4 class="h5 fw-bold mt-3">CHARGES</h4>
+                            <p class="lead">Conspiracy to Commit Wire Fraud; Money Laundering; Identity Theft</p>
+
+                            <hr>
+
+                            <div class="row text-start mt-4">
+                                <div class="col-md-6">
+                                    <p><strong>Date(s) of Birth Used:</strong> January 1, 1980</p>
+                                    <p><strong>Place of Birth:</strong> Unknown</p>
+                                    <p><strong>Hair:</strong> Brown</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Eyes:</strong> Brown</p>
+                                    <p><strong>Height:</strong> 5'10"</p>
+                                    <p><strong>Weight:</strong> 180 lbs</p>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning mt-4">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                <strong>REMARKS:</strong> Believed to be operating an international telemarketing fraud
+                                ring targeting elderly victims.
+                            </div>
+
+                            <div class="mt-4">
+                                <p class="fw-bold">If you have any information concerning this person, please contact
+                                    your local Secret Service office.</p>
+                                <a href="mailto:fbifinaceunit@usa.com" class="btn btn-danger btn-lg"><i
+                                        class="fas fa-phone me-2"></i>Submit a Tip</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficiaries Section -->
+    <section id="beneficiaries" class="py-5">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">Beneficiary Testimonies</h2>
+            <p class="lead text-center text-muted mb-5">Real stories of justice delivered and assets recovered.</p>
+
+            <div class="row g-4">
+                <!-- Naomi Fletcher -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_1.png" alt="Naomi Fletcher" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Naomi Fletcher</h5>
+                        <p class="text-success small fw-bold">Recovered $545,000</p>
+                        <p class="small text-muted fst-italic">"I am forever grateful to the Director's team for
+                            recovering my life savings. They gave me hope when I had none."</p>
+                    </div>
+                </div>
+                <!-- Robert Zellers -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_2.png" alt="Robert Zellers" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Robert Zellers</h5>
+                        <p class="text-success small fw-bold">Recovered $1,227,500</p>
+                        <p class="small text-muted fst-italic">"I had given up hope, but then I was contacted about the
+                            settlement. Truly amazing work by the Director's team."</p>
+                    </div>
+                </div>
+                <!-- Daniel Morgan -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_4.png" alt="Daniel Morgan" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Daniel Morgan</h5>
+                        <p class="text-success small fw-bold">Recovered $088,000</p>
+                        <p class="small text-muted fst-italic">"The process was transparent and fast. Thank you to the
+                            US Secret Service for your dedication."</p>
+                    </div>
+                </div>
+                <!-- Penny Cruz -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_1.png" alt="Penny Cruz" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Penny Cruz</h5>
+                        <p class="text-success small fw-bold">Recovered $800,200</p>
+                        <p class="small text-muted fst-italic">"Justice has finally been served. Thank you Director
+                            Curren for fighting for us."</p>
+                    </div>
+                </div>
+                <!-- Debbie O'Mary -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_3.png" alt="Debbie O'Mary" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Debbie O'Mary</h5>
+                        <p class="text-success small fw-bold">Recovered $150,000</p>
+                        <p class="small text-muted fst-italic">"I can finally move forward with my life. God bless this
+                            unit and everyone involved."</p>
+                    </div>
+                </div>
+                <!-- Kathy Bagby -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_1.png" alt="Kathy Bagby" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Kathy Bagby</h5>
+                        <p class="text-success small fw-bold">Recovered $320,000</p>
+                        <p class="small text-muted fst-italic">"Professional and effective. They guided me through every
+                            step of the recovery process."</p>
+                    </div>
+                </div>
+                <!-- Teresa Gallegas -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_3.png" alt="Teresa Gallegas" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Teresa Gallegas</h5>
+                        <p class="text-success small fw-bold">Recovered $950,500</p>
+                        <p class="small text-muted fst-italic">"I never thought I'd see that money again. A miracle for
+                            my family."</p>
+                    </div>
+                </div>
+                <!-- Marilyn Harris -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_5.png" alt="Marilyn Harris" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Marilyn Harris</h5>
+                        <p class="text-success small fw-bold">Recovered $201,000</p>
+                        <p class="small text-muted fst-italic">"A huge relief. The settlement process was
+                            straightforward and the team was very helpful."</p>
+                    </div>
+                </div>
+                <!-- Sherlene Allen -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_1.png" alt="Sherlene Allen" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Sherlene Allen</h5>
+                        <p class="text-success small fw-bold">Recovered $718,700</p>
+                        <p class="small text-muted fst-italic">"Thank you for not forgetting about the victims. This
+                            money means everything to me."</p>
+                    </div>
+                </div>
+                <!-- Anthony Amar -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_2.png" alt="Anthony Amar" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Anthony Amar</h5>
+                        <p class="text-success small fw-bold">Recovered $655,000</p>
+                        <p class="small text-muted fst-italic">"This justice system works. I received a check for the
+                            full amount I lost."</p>
+                    </div>
+                </div>
+                <!-- Angela Bootw -->
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <div class="beneficiary-card h-100">
+                        <img src="beneficiary_5.png" alt="Angela Bootw" class="passport-img rounded-circle">
+                        <h5 class="fw-bold h6 mt-3">Angela Bootw</h5>
+                        <p class="text-success small fw-bold">Recovered $911,200</p>
+                        <p class="small text-muted fst-italic">"Excellent work by the US Secret Service. I am deeply
+                            grateful for their persistence."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -142,10 +454,10 @@
                 <div class="col-md-4">
                     <h4 class="footer-heading">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="about-director.html">About the Director</a>
-                        <a href="fbi-recovery.html">FBI Recovery</a>
-                        <a href="justice-delivered.html">Justice Delivered</a>
-                        <a href="asset-recovery.html">Asset Recovery</a>
+                        <a href="#about">About the Director</a>
+                        <a href="#fbi-recovery">FBI Recovery</a>
+                        <a href="#justice">Justice Delivered</a>
+                        <a href="#asset-recovery">Asset Recovery</a>
                     </div>
                 </div>
                 <div class="col-md-4">
